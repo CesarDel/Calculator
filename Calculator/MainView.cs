@@ -273,8 +273,15 @@ namespace Calculator
                             }
 
                             calcSelection = 2;
+                            try
+                            {
+                                param1 = Double.Parse(textBox3.Text);
+                            }
+                            catch (System.FormatException)
+                            {
+                                calcSelection = 0;
+                            }
 
-                            param1 = Double.Parse(textBox3.Text);
 
                             textBox3.Text = null;
 
@@ -380,7 +387,19 @@ namespace Calculator
             if (calcSelection == 3)
             { return MainController.Multiply(new Parameter(param1), new Parameter(Double.Parse(textBox3.Text))); }
             if (calcSelection == 4)
-            { return MainController.Divide(new Parameter(param1), new Parameter(Double.Parse(textBox3.Text))); }
+            {
+                try
+                {
+                    return MainController.Divide(new Parameter(param1), new Parameter(Double.Parse(textBox3.Text)));
+                }
+                catch (System.FormatException)
+                {
+                    textBox3.Text = "error";
+                    textBox3.Show();
+                    return new Result(0);
+                }
+                
+            }
 
             calcSelection = 0;
 
