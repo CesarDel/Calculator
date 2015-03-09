@@ -5,3 +5,5 @@ C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculat
 C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculator.exe
 C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculator.pdb
 C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculator.ViewAboutCalculator.resources
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Release\Calculator.ViewPreferences.resources

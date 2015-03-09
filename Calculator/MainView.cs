@@ -223,6 +223,16 @@ namespace Calculator
         {
             Result r1 = Calculation();
 
+            ViewPreferences one = new ViewPreferences();
+            one.Hide();
+            if(one.getRadioButton1().Checked)
+            {
+                FileController c1 = new FileController();
+                
+                c1.Write(c1.Create("History.txt"), Convert.ToString(r1.getValue()));
+            }
+            one.Close();
+
             textBox3.Text = Convert.ToString(r1.getValue());
         }
 
@@ -404,6 +414,26 @@ namespace Calculator
             calcSelection = 0;
 
             return null;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ViewPreferences().Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aboutCalculatorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new ViewAboutCalculator().Show();
         }
     }
 }
