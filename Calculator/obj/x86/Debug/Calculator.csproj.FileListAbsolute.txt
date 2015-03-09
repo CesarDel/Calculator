@@ -1,0 +1,6 @@
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Debug\Calculator.MainView.resources
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Debug\Calculator.exe
+C:\Users\César\Desktop\CProjects\Calculator\Calculator\obj\x86\Debug\Calculator.pdb
