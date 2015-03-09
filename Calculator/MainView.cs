@@ -15,33 +15,38 @@ namespace Calculator
         double param1 = 0;     // variable used to store a parameter for the calculation
 
         public MainView()
-        {            
-            InitializeComponent();        
+        {
+            InitializeComponent();
         }
 
         private void MainView_Load(object sender, EventArgs e)
         {
-            textBox3.Select(); // method to put the cursor straight away on the textBox you need it to be
-            
+            textBox3.Select();
+        }
+
+        private void CursorFocus()
+        {
+            textBox3.Focus();
+            textBox3.SelectionStart = textBox3.Text.Length;
         }
 
         // addition method
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if(calcSelection!= 0)
+            if (calcSelection != 0)
             {
                 Result r1 = Calculation();
                 textBox3.Text = Convert.ToString(r1.getValue());
             }
-           
+
             calcSelection = 1;
-            
+
             param1 = Double.Parse(textBox3.Text);
 
             textBox3.Text = null;
 
-            textBox3.Select();
+            CursorFocus();
 
         }
 
@@ -60,7 +65,7 @@ namespace Calculator
 
             textBox3.Text = null;
 
-            textBox3.Select();
+            CursorFocus();
 
         }
 
@@ -79,8 +84,8 @@ namespace Calculator
 
             textBox3.Text = null;
 
-            textBox3.Select();
-      
+            CursorFocus();
+
         }
 
         // division method
@@ -98,8 +103,8 @@ namespace Calculator
 
             textBox3.Text = null;
 
-            textBox3.Select();
-      
+            CursorFocus();
+
         }
 
 
@@ -111,9 +116,9 @@ namespace Calculator
         // button used to clear the text box and reset any variables needed to reset
         private void button5_Click(object sender, EventArgs e)
         {
-            calcSelection = 0;                       
+            calcSelection = 0;
             textBox3.Text = null;
-            textBox3.Select();
+            CursorFocus();
         }
 
 
@@ -123,7 +128,9 @@ namespace Calculator
         {
             textBox3.Text += button12.Text;
             textBox3.Show();
-            textBox3.Select();
+            
+            CursorFocus();
+            
         }
 
         // puts the number from the button text on the display to do the maths
@@ -131,7 +138,7 @@ namespace Calculator
         {
             textBox3.Text += button13.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -139,7 +146,7 @@ namespace Calculator
         {
             textBox3.Text += button14.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -147,7 +154,7 @@ namespace Calculator
         {
             textBox3.Text += button9.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -155,7 +162,7 @@ namespace Calculator
         {
             textBox3.Text += button10.Text;
             textBox3.Show();
-            textBox3.Focus();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -163,7 +170,7 @@ namespace Calculator
         {
             textBox3.Text += button11.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -171,7 +178,7 @@ namespace Calculator
         {
             textBox3.Text += button6.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -179,7 +186,7 @@ namespace Calculator
         {
             textBox3.Text += button7.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -187,7 +194,7 @@ namespace Calculator
         {
             textBox3.Text += button8.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -195,7 +202,7 @@ namespace Calculator
         {
             textBox3.Text += button15.Text;
             textBox3.Show();
-            textBox3.Select();
+            CursorFocus();
         }
 
         // puts the number from the button text on the display to do the maths
@@ -205,7 +212,7 @@ namespace Calculator
             {
                 textBox3.Text += button16.Text;
                 textBox3.Show();
-                textBox3.Select();
+                CursorFocus();
             }
         }
 
@@ -213,9 +220,9 @@ namespace Calculator
 
         // button that will present the result of the calculation selected
         private void button17_Click(object sender, EventArgs e)
-        {            
+        {
             Result r1 = Calculation();
-                                  
+
             textBox3.Text = Convert.ToString(r1.getValue());
         }
 
@@ -225,7 +232,7 @@ namespace Calculator
         private Boolean nonNumberEntered = false;
 
         // Handle the KeyDown event to determine the type of the character entered into the control
-        private void textBox3_KeyDown (object sender, System.Windows.Forms.KeyEventArgs e)
+        private void textBox3_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             // initializing the flag to false
             nonNumberEntered = false;
@@ -254,7 +261,7 @@ namespace Calculator
 
                             textBox3.Text = null;
 
-                            textBox3.Select();
+                            CursorFocus();
                         }
 
                         if (e.KeyCode == Keys.Subtract)
@@ -271,10 +278,10 @@ namespace Calculator
 
                             textBox3.Text = null;
 
-                            textBox3.Select();
+                            CursorFocus();
                         }
 
-                        if (e.KeyCode == Keys.Multiply) 
+                        if (e.KeyCode == Keys.Multiply)
                         {
                             if (calcSelection != 0)
                             {
@@ -288,7 +295,7 @@ namespace Calculator
 
                             textBox3.Text = null;
 
-                            textBox3.Select();
+                            CursorFocus();
                         }
 
                         if (e.KeyCode == Keys.Divide)
@@ -305,7 +312,7 @@ namespace Calculator
 
                             textBox3.Text = null;
 
-                            textBox3.Select();
+                            CursorFocus();
                         }
 
                         if (e.KeyCode == Keys.Enter)
@@ -327,6 +334,7 @@ namespace Calculator
                             {
                                 textBox3.Text += button16.Text;
                                 textBox3.Show();
+                                CursorFocus();
                             }
 
                         }
@@ -344,7 +352,7 @@ namespace Calculator
             {
                 nonNumberEntered = true;
             }
-            
+
         }
 
         // This event occurs after the KeyDown event and can be used to prevent 
@@ -353,13 +361,13 @@ namespace Calculator
         {
             // Check for the flag being set in the KeyDown event. 
             if (nonNumberEntered == true)
-            {               
-             
+            {
+
                 // Stop the character from being entered into the control since it is non-numerical.
                 e.Handled = true;
             }
         }
-        
+
         #endregion
 
         private Result Calculation()

@@ -37,7 +37,6 @@ namespace Calculator
             ModelDivision div1 = new ModelDivision(a, b);
 
             return div1.getResult();
-        }
-        
+        }                
     }
 }

@@ -63,9 +63,10 @@
             this.textBox3.Location = new System.Drawing.Point(38, 44);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox3.Size = new System.Drawing.Size(251, 43);
             this.textBox3.TabIndex = 3;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
