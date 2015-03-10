@@ -22,7 +22,7 @@ namespace Calculator
         {
             FileController f1 = new FileController();
 
-            ArrayList qq = f1.Read(new System.IO.StreamReader("Preferences.txt"));
+            ArrayList qq = f1.Read(f1.Open("Preferences.txt"));
 
             string line = "", line2 = "";
 
@@ -71,14 +71,13 @@ namespace Calculator
 
             if(radioButton1.Checked)
             {
-                f1.Write(f1.Create("Preferences.txt"), "History=true");
+                f1.Write(f1.Create("Preferences.txt", false), "History=true");
 
             }else
                 if(radioButton2.Checked)
                 {
-                    f1.Write(f1.Create("Preferences.txt"), "History=false");
+                    f1.Write(f1.Create("Preferences.txt", false), "History=false");
                 }
-
             this.Close();
         }
 

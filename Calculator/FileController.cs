@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.IO;
 
 namespace Calculator
 {
     class FileController
     {
 
-        public System.IO.StreamWriter Create(string Name)
+        public System.IO.StreamWriter Create(string Name, Boolean mode)
         {
-            return new System.IO.StreamWriter(Name, true);
+            return new System.IO.StreamWriter(Name, mode);
         }
 
         public void Write(System.IO.StreamWriter File, string Line)
@@ -38,11 +39,9 @@ namespace Calculator
             return list;
         }
 
-        public void Open(String Name)
+        public System.IO.StreamReader Open(String Name)
         {
-
-
+            return new System.IO.StreamReader(Name);
         }
-
     }
 }

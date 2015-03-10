@@ -223,15 +223,7 @@ namespace Calculator
         {
             Result r1 = Calculation();
 
-            ViewPreferences one = new ViewPreferences();
-            one.Hide();
-            if(one.getRadioButton1().Checked)
-            {
-                FileController c1 = new FileController();
-                
-                c1.Write(c1.Create("History.txt"), Convert.ToString(r1.getValue()));
-            }
-            one.Close();
+            WriteToHistory(Convert.ToString(r1.getValue()));
 
             textBox3.Text = Convert.ToString(r1.getValue());
         }
@@ -333,9 +325,9 @@ namespace Calculator
                         }
 
                         if (e.KeyCode == Keys.Enter)
-                        {
+                        {                            
                             Result r1 = Calculation();
-
+                            WriteToHistory(Convert.ToString(r1.getValue()));
                             textBox3.Text = Convert.ToString(r1.getValue());
                         }
 
@@ -415,6 +407,43 @@ namespace Calculator
 
             return null;
         }
+
+        private void WriteToHistory(string value)
+        {
+            ViewPreferences one = new ViewPreferences();
+            one.Hide();
+            if (one.getRadioButton1().Checked)
+            {
+                FileController c1 = new FileController();
+                StringBuilder sb = new StringBuilder();
+                sb.Append(Convert.ToString(param1));
+
+                if (calcSelection == 1)
+                {
+                    sb.Append(" + ");
+                }
+                if (calcSelection == 2)
+                {
+                    sb.Append(" - ");
+                }
+                if (calcSelection == 3)
+                {
+                    sb.Append(" * ");
+                }
+                if (calcSelection == 4)
+                {
+                    sb.Append(" / ");
+                }
+
+                sb.Append(textBox3.Text);
+                sb.Append(" = ");
+                sb.Append(Convert.ToString(value));
+
+                c1.Write(c1.Create("History.txt", true), sb.ToString());
+            }
+            one.Close();
+        }
+
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
